@@ -1,20 +1,270 @@
 .events {
   @media screen and (min-width: 1280px) {
-    position: absolute;
-    width: 1888px;
-    height: 2106px;
-    left: -304px;
-    top: 446px;
+    //position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 70px;
+    width: 946px;
+    //height: 1760px;
+    top: 387px;
+    margin: auto;
   }
 }
-
-.events-list-item {
+.information {
   @media screen and (min-width: 1280px) {
-    position: absolute;
+    display: block;
+    // align-items: center;
+    // justify-content: center;
+  }
+}
+.photo-card {
+  @media screen and (min-width: 1280px) {
+    padding-bottom: 63px;
+  }
+}
+.events-img {
+  @media screen and (min-width: 1280px) {
+    // position: absolute;
     width: 180px;
     height: 227px;
     left: 175px;
     top: 400px;
     border-radius: 50px 0px;
+    // &:not(:last-child) {
+    //   padding-right: 70px;
+    // }
+  }
+}
+.group-name {
+  @media screen and (min-width: 1280px) {
+    //position: absolute;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #dc56c5;
+  }
+}
+.date {
+  @media screen and (min-width: 1280px) {
+    //position: absolute;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-align: center;
+
+    color: #ffffff;
+  }
+}
+
+.concert-venue {
+  @media screen and (min-width: 1280px) {
+    //position: absolute;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-align: center;
+
+    color: #ffffff;
+  }
+}
+
+.events {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    //position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 70px;
+    width: 768px;
+    height: 364px;
+    left: 0px;
+    top: 0px;
+    margin: auto;
+  }
+}
+.information {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    display: block;
+    // align-items: center;
+    // justify-content: center;
+  }
+}
+
+.photo-card {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    padding-bottom: 58px;
+  }
+}
+.events-img {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    // position: absolute;
+    width: 180px;
+    height: 227px;
+    left: 501px;
+    top: 317px;
+
+    border-radius: 50px 0px;
+  }
+}
+.group-name {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    //position: absolute;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #dc56c5;
+  }
+}
+.date {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    //position: absolute;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-align: center;
+
+    color: #ffffff;
+  }
+}
+
+.concert-venue {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    //position: absolute;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    margin-top: 5px;
+    margin-bottom: 0px;
+
+    text-align: center;
+
+    color: #ffffff;
+  }
+}
+
+.events {
+  @media screen and (max-width: 767px) {
+    //position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+    align-items: center;
+    width: 280px;
+    // height: 2635px;
+    left: 25px;
+    top: 304px;
+    margin: auto;
+  }
+}
+.information {
+  @media screen and (max-width: 767px) {
+    display: block;
+    // align-items: center;
+    // justify-content: center;
+  }
+}
+
+.photo-card {
+  @media screen and (max-width: 767px) {
+    padding-bottom: 39px;
+  }
+}
+.events-img {
+  @media screen and (max-width: 767px) {
+    // position: absolute;
+    width: 128px;
+    height: 161px;
+    left: 25px;
+    top: 2706px;
+
+    border-radius: 50px 0px;
+  }
+}
+.group-name {
+  @media screen and (max-width: 767px) {
+    //position: absolute;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #dc56c5;
+  }
+}
+.date {
+  @media screen and (max-width: 767px) {
+    //position: absolute;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 17px;
+    /* identical to box height */
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-align: center;
+
+    color: #ffffff;
+  }
+}
+
+.concert-venue {
+  @media screen and (max-width: 767px) {
+    //position: absolute;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    margin-top: 5px;
+    margin-bottom: 0px;
+
+    text-align: center;
+
+    color: #ffffff;
   }
 }

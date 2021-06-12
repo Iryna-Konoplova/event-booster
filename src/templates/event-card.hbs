@@ -1,12 +1,12 @@
 {{#each this}}
-<li class='events-list-item'>
+<li class='event-card-list'>
   <div class="photo-card">
-    <img class='events-img' src="https://www.imgonline.com.ua/examples/bee-on-daisy.jpg" alt="ромашка" />
+    <img class='events-img' src={{images}} alt={{name}}/>
 
     <div class="information">
-      <p class="group-mame"> Монатик </p>
-      <p class="date">21-12-2021 </p>
-      <p class="concert-venue"> ВДНХ</p>
+      <p class="group-name"> {{name}}</p>
+      <p class="date">{{dates}} </p>
+      <p class="concert-venue"> {{address}}</p>
     </div>
   </div>
 </li>
