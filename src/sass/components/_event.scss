@@ -23,6 +23,31 @@
 .photo-card {
   @media screen and (min-width: 1280px) {
     padding-bottom: 63px;
+    position: relative;
+  }
+  .information:after {
+    @media screen and (min-width: 1280px) {
+      display: inline-block;
+      content: '';
+      width: 109px;
+      height: 101px;
+      left: 54px;
+      top: 2697px;
+
+      border: 1px solid rgba(220, 86, 197, 0.3);
+      box-sizing: border-box;
+      border-radius: 50px 0px;
+
+      // width: 26px;
+      // height: 26px;
+      // background-color: white;
+      // border-radius: 50%;
+      //position: absolute;
+      // left: 41px;
+      // bottom: 15px;
+      z-index: 2;
+      margin-left: 69px;
+    }
   }
 }
 .events-img {
@@ -32,7 +57,9 @@
     height: 227px;
     left: 175px;
     top: 400px;
+    z-index: 1;
     border-radius: 50px 0px;
+    // position: relative;
     // &:not(:last-child) {
     //   padding-right: 70px;
     // }
