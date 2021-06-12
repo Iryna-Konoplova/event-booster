@@ -1,0 +1,20 @@
+.events {
+  @media screen and (min-width: 1280px) {
+    position: absolute;
+    width: 1888px;
+    height: 2106px;
+    left: -304px;
+    top: 446px;
+  }
+}
+
+.events-list-item {
+  @media screen and (min-width: 1280px) {
+    position: absolute;
+    width: 180px;
+    height: 227px;
+    left: 175px;
+    top: 400px;
+    border-radius: 50px 0px;
+  }
+}
