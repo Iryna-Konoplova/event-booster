@@ -1,12 +1,13 @@
 .background__rectangle {
   position: absolute;
+  top: 0;
   z-index: -2;
   left: 50%;
   right: 50%;
   transform: translateX(-50%);
   height: 100%;
-  border-left: 1px solid #212121;
-  border-right: 1px solid #212121;
+  border-left: 1px solid $border-background-color;
+  border-right: 1px solid $border-background-color;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -29,7 +30,7 @@
 
   background-color: $background-color;
   border-radius: 50%;
-  border: 1px solid #212121;
+  border: 1px solid $border-background-color;
 
   @media screen and (min-width: 768px) {
     width: 126px;
@@ -90,7 +91,6 @@
   );
   backdrop-filter: blur(20px);
   border-radius: 50%;
-  border: 1px solid #212121;
 
   @media screen and (min-width: 768px) {
     width: 80px;
@@ -123,8 +123,8 @@
 
   height: 334px;
   width: 334px;
-  background-color: $background-color;
-  border: 1px solid #212121;
+  // background-color: $background-color;
+  border: 1px solid $border-background-color;
   // border-radius: 100% 0 0 0;
 
   @media screen and (min-width: 768px) {
