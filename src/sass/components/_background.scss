@@ -1,0 +1,177 @@
+.background__rectangle {
+  position: absolute;
+  z-index: -2;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  border-left: 1px solid #212121;
+  border-right: 1px solid #212121;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    width: 595px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 1050px;
+  }
+}
+
+.background__circle__big {
+  position: absolute;
+  z-index: -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $background-color;
+  border-radius: 50%;
+  border: 1px solid #212121;
+
+  @media screen and (min-width: 768px) {
+    width: 126px;
+    height: 126px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 216px;
+    height: 216px;
+  }
+}
+
+.circle__middle__left {
+  @media screen and (min-width: 768px) {
+    left: -63px;
+    top: 450px;
+  }
+  @media screen and (min-width: 1280px) {
+    left: -108px;
+    top: 742px;
+  }
+}
+
+.circle__middle__right {
+  @media screen and (min-width: 768px) {
+    right: -63px;
+    top: 1525px;
+  }
+  @media screen and (min-width: 1280px) {
+    right: -108px;
+    top: 1267px;
+  }
+}
+
+.circle__lower {
+  align-items: flex-end;
+
+  @media screen and (min-width: 768px) {
+    width: 126px;
+    height: 63px;
+    bottom: 0;
+    left: -63px;
+    border-radius: 63px 63px 0 0;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 216px;
+    height: 108px;
+    bottom: 0;
+    left: -108px;
+    border-radius: 108px 108px 0 0;
+  }
+}
+
+.background__circle__little {
+  background: linear-gradient(
+    151.61deg,
+    rgba(196, 196, 196, 0.03) -7.48%,
+    rgba(196, 196, 196, 0) 106.62%
+  );
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  border: 1px solid #212121;
+
+  @media screen and (min-width: 768px) {
+    width: 80px;
+    height: 80px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 136px;
+    height: 136px;
+  }
+}
+
+.little__circle__lower {
+  @media screen and (min-width: 768px) {
+    width: 80px;
+    height: 40px;
+    border-radius: 40px 40px 0 0;
+    border-bottom: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 136px;
+    height: 68px;
+    border-radius: 68px 68px 0 0;
+    border-bottom: 0;
+  }
+}
+
+.background__square__rounded {
+  position: absolute;
+  z-index: -1;
+
+  height: 334px;
+  width: 334px;
+  background-color: $background-color;
+  border: 1px solid #212121;
+  // border-radius: 100% 0 0 0;
+
+  @media screen and (min-width: 768px) {
+    width: 238px;
+    height: 238px;
+  }
+  @media screen and (min-width: 1280px) {
+    height: 334px;
+    width: 334px;
+  }
+}
+
+.square__top__right {
+  border-radius: 100% 0 0 0;
+
+  @media screen and (min-width: 768px) {
+    top: 784px;
+    right: -61px;
+  }
+  @media screen and (min-width: 1280px) {
+    top: 490px;
+    right: -85px;
+  }
+}
+
+.square__bottom__right {
+  border-radius: 100% 0 0 0;
+
+  @media screen and (min-width: 768px) {
+    bottom: 197px;
+    right: -61px;
+  }
+  @media screen and (min-width: 1280px) {
+    bottom: 158px;
+    right: -85px;
+  }
+}
+
+.square__bottom__left {
+  border-radius: 0 100% 0 0;
+
+  @media screen and (min-width: 768px) {
+    top: 1585px;
+    left: -61px;
+  }
+  @media screen and (min-width: 1280px) {
+    top: 1244px;
+    left: -85px;
+  }
+}
