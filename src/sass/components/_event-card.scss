@@ -43,6 +43,7 @@
 
 .event-card-img {
   @media screen and (min-width: 1280px) {
+    display: block;
     width: 180px;
     height: 227px;
     left: 175px;
@@ -135,6 +136,7 @@
 }
 .event-card-img {
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+    display: block;
     width: 180px;
     height: 227px;
     left: 501px;
@@ -168,7 +170,12 @@
     color: $primary-text-color;
   }
 }
-
+.event-card-icon {
+  @media screen and (min-width: 768px) {
+    width: 7px;
+    height: 10px;
+  }
+}
 .event-card-concert-venue {
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-family: $primary-font;
@@ -224,7 +231,7 @@
 }
 .event-card-img {
   @media screen and (max-width: 767px) {
-    // position: absolute;
+    display: block;
     width: 128px;
     height: 161px;
     left: 25px;
@@ -235,6 +242,7 @@
 }
 .event-card-group-name {
   @media screen and (max-width: 767px) {
+    width: 128px;
     font-family: $primary-font;
     font-style: normal;
     font-weight: bold;
@@ -259,7 +267,12 @@
     color: $primary-text-color;
   }
 }
-
+.event-card-icon {
+  @media screen and (max-width: 767px) {
+    width: 6px;
+    height: 9px;
+  }
+}
 .event-card-concert-venue {
   @media screen and (max-width: 767px) {
     font-family: $primary-font;
