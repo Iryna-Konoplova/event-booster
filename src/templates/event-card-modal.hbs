@@ -1,1 +1,44 @@
 
+{{#each this}}
+<div>
+    <img class="modal__circle-pic" src="{{images}}" alt="" />
+    <div class="modal__card">
+        <img class="modal__main-pic" src="{{images}}" alt="" />
+    
+        <div class="modal__content">
+            <h3 class="modal__title">info</h3>
+            <p class="modal__item">Atlas Weekend is the largest music festival
+                in Ukraine.More than 200 artists will create
+                a proper music festival atmosphere on 10 stages</p>
+    
+            <h3 class="modal__title">when</h3>
+            <span class="modal__item-span">{{2021-06-09}}</span>
+            <p class="modal__item">{{20:00 (Kyiv/Ukraine)}}</p>
+    
+            <h3 class="modal__title">where</h3>
+            <span class="modal__item-span">{{Kyiv, Ukraine}}</span>
+            <p class="modal__item">{{VDNH}} </p>
+    
+            <h3 class="modal__title">who</h3>
+            <p class="modal__item">{{The Black Eyed Peas}}</p>
+    
+            <h3 class="modal__title">prices</h3>
+            <div class="modal__price">
+                <svg class="modal__icon-barcode">
+                    <use href="./images/sprite.svg#icon-barcode"></use>
+                </svg>
+                <p class="modal__item ">Standart 300-500 UAH</p>
+            </div>
+            <button class="modal__btn-buy" type="button">buy tickets</button>
+            <div class="modal__price">
+                <svg class="modal__icon-barcode">
+                    <use href="./images/sprite.svg#icon-barcode"></use>
+                </svg>
+                <p class="modal__item">Standart 300-500 UAH</p>
+            </div>
+            <button class="modal__btn-buy" type="button">buy tickets</button>
+        </div>
+    </div>
+</div>
+{{/each}}
+
