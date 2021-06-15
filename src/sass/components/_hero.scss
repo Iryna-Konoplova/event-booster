@@ -1,6 +1,29 @@
 .hero {
+  background-image: -webkit-image-set(
+    url('../images/hero-bg-mobile.jpg') 1x,
+    url('../images/hero-bg-mobile-2x.jpg') 2x
+  );
+
+  @media screen and (min-width: 768px) {
+    background-image: -webkit-image-set(
+      url('../images/hero-bg-tablet.jpg') 1x,
+      url('../images/hero-bg-tablet-2x.jpg') 2x
+    );
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-image: -webkit-image-set(
+      url('../images/hero-bg-desktop.jpg') 1x,
+      url('../images/hero-bg-desktop-2x.jpg') 2x
+    );
+  }
+}
+
+.overlay {
+  background-color: $hero-background-overlay;
+
   padding-top: 78px;
-  padding-bottom: 122px;
+  padding-bottom: 112px;
 
   @media screen and (min-width: 768px) {
     padding-top: 40px;
@@ -41,16 +64,17 @@
 
 .hero-form {
   margin-top: 25px;
+  padding-right: 10px;
 
   @media screen and (min-width: 768px) {
     padding-left: 14px;
-    padding-right: 14px;
+    padding-right: 28px;
     margin-top: 27px;
   }
 
   @media screen and (min-width: 1280px) {
     padding-left: 182px;
-    padding-right: 182px;
+    padding-right: 196px;
     margin-top: 52px;
   }
 }
@@ -82,4 +106,8 @@
   backdrop-filter: blur(20px);
   border-radius: 20px;
   border-style: none;
+}
+
+input.hero-form-field::placeholder {
+  color: $text-footer-color;
 }
