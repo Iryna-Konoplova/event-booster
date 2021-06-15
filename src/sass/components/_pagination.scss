@@ -1,4 +1,6 @@
 .pagination-list {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   margin: 60px auto;
