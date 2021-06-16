@@ -28,13 +28,12 @@
 .modal {
   position: absolute;
   z-index: 1050;
-  top: 50%;
+  top: 100%;
   left: 50%;
+  overflow: auto;
 
   background: #fff2fd;
   border-radius: 150px 0px;
-
-  height: auto;
   color: $background-color;
 
   transform: translate(-50%, -50%) scale(1);
