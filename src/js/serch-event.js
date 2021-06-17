@@ -1,20 +1,25 @@
-const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?keyword=';
-const apikey='LgD2oGhbb5VYMHYtmGPQVhOZglCXA59d';
-//https://app.ticketmaster.com/discovery/v2/events.json?keyword=Dollar&apikey=LgD2oGhbb5VYMHYtmGPQVhOZglCXA59d
+const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=LgD2oGhbb5VYMHYtmGPQVhOZglCXA59d';
+//https://app.ticketmaster.com/discovery/v2/events.json?keyword=Dollar&countryCode=US
 
-export default function searchEvent() {
-    console.log(123);
-    return 0;
-    /*if (searchQuery === '') return;
-    
-    return fetch(`${BASE_URL}/name/${searchQuery}+apiKey`)
+export default function searchEvent(inputValue, selectValue) {
+
+  var urlParams = '';
+    if (inputValue != '') {
+      urlParams += `&keyword=${inputValue}`;
+    }
+
+    if (selectValue != undefined) {
+      urlParams += `&countryCode=${selectValue}`;
+    }
+
+    return fetch(`${BASE_URL}${urlParams}`)
         .then(response => {
             if (response.ok) return response.json();
             throw new Error('Error fetching data');
         })
         .catch(error => {
 
-        });*/
+        });
 }
 
 /*var debounce = require('lodash.debounce');
