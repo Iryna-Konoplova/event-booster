@@ -28,7 +28,7 @@ export default class NewsApiService {
         this.searchQuery = newQuery;
     }
 
-        get countryQuery() {
+    get countryQuery() {
         return this._countryQuery;
     }
 
@@ -51,7 +51,7 @@ export default class NewsApiService {
   
     }
 
-        get idEvent() {
+    get idEvent() {
         return this.id;
     }
 
