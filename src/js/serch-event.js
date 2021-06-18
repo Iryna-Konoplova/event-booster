@@ -1,4 +1,5 @@
 
+
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=LgD2oGhbb5VYMHYtmGPQVhOZglCXA59d';
 //https://app.ticketmaster.com/discovery/v2/events.json?keyword=Dollar&countryCode=US
 
@@ -12,6 +13,7 @@ export default function searchEvent(inputValue, selectValue) {
     if (selectValue != undefined) {
       urlParams += `&countryCode=${selectValue}`;
     }
+
 
     return fetch(`${BASE_URL}${urlParams}`)
         .then(response => {
@@ -73,4 +75,5 @@ function onFetchError() {
       maxTextHeight: null,
     });
   }*/
+
 
