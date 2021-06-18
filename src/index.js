@@ -28,9 +28,9 @@ inputEvent.addEventListener('input',  (event) => {
   searchEvent(inputValue, selectValue);
 });
 
-const refs = {
-  select: document.querySelector('.select')
-}
+// const refs = {
+//   select: document.querySelector('.select')
+// }
 
 
 const optionsMarkup = createSelectorOptionsMarkup(countries);
