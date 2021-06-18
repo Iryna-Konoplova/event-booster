@@ -1,0 +1,18 @@
+{{#each this}}
+<li id={{id}} class='event-card-list'>
+  <div id={{id}} class="event-card-photo">
+    <img id={{id}}  class='event-card-img' src={{images.5.url}} alt={{name}}/>
+
+    <div id={{id}} class="event-card-information">
+      <p id={{id}} class="event-card-group-name"> {{name}}</p>
+      <p id={{id}} class="event-card-date">{{dates.start.localDate}} </p>
+      <p id={{id}} class="event-card-concert-venue">
+         <svg class="event-card-icon" aria-label="Where is the concert">
+            <use href="./images/symbol-defs.svg#icon-Vector-3"></use>
+        </svg>
+      {{dates.timezone}}</p>
+    </div>
+  </div>
+</li>
+{{/each}}
+

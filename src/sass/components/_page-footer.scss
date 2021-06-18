@@ -1,0 +1,37 @@
+.container-footer {
+  display: block;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 27px;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 18px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-bottom: 19px;
+  }
+}
+
+.info-footer {
+  display: block;
+  width: 252px;
+  height: 34px;
+  font-style: normal;
+  font-weight: normal;
+  color: $text-footer-color;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  margin: 0;
+
+  @media screen and (min-width: 768px) {
+    width: 521px;
+    height: 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.heart-footer {
+  color: red;
+}
