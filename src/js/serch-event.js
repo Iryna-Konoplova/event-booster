@@ -1,3 +1,4 @@
+
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=LgD2oGhbb5VYMHYtmGPQVhOZglCXA59d';
 //https://app.ticketmaster.com/discovery/v2/events.json?keyword=Dollar&countryCode=US
 
@@ -72,3 +73,4 @@ function onFetchError() {
       maxTextHeight: null,
     });
   }*/
+
