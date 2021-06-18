@@ -1,9 +1,9 @@
 
 {{#each this}}
 <div>
-    <img class="modal__circle-pic" src="{{images}}" alt="" />
+    <img class="modal__circle-pic" src={{images.1.url}} alt={{name}} />
     <div class="modal__card">
-        <img class="modal__main-pic" src="{{images}}" alt="" />
+        <img class="modal__main-pic" src={{images.1.url}} alt={{name}} />
     
         <div class="modal__content">
             <h3 class="modal__title">info</h3>
@@ -12,15 +12,15 @@
                 a proper music festival atmosphere on 10 stages</p>
     
             <h3 class="modal__title">when</h3>
-            <span class="modal__item-span">{{2021-06-09}}</span>
-            <p class="modal__item">{{20:00 (Kyiv/Ukraine)}}</p>
+            <span class="modal__item-span">{{dates.start.localDate}}</span>
+            <p class="modal__item">{{dates.timezone}}</p>
     
             <h3 class="modal__title">where</h3>
-            <span class="modal__item-span">{{Kyiv, Ukraine}}</span>
-            <p class="modal__item">{{VDNH}} </p>
+            <span class="modal__item-span">{{dates.timezone}}</span>
+            <p class="modal__item">{{dates.timezone}} </p>
     
             <h3 class="modal__title">who</h3>
-            <p class="modal__item">{{The Black Eyed Peas}}</p>
+            <p class="modal__item">{{name}}</p>
     
             <h3 class="modal__title">prices</h3>
             <div class="modal__price">
