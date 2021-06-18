@@ -1,3 +1,25 @@
+.header-container {
+  position: relative;
+  display: block;
+  width: 320px;
+  height: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -90px;
+  z-index: 2;
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    height: 151px;
+    margin-bottom: -151px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+    height: 201px;
+    margin-bottom: -201px;
+  }
+}
+
 header {
   position: absolute;
   z-index: 3;
