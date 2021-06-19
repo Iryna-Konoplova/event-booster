@@ -2,7 +2,8 @@ import debounce from 'lodash.debounce';
 import NewsApiService from './apiService';
 import eventCardTpl from '../templates/event-card.hbs';
 import eventCardModalTpl from '../templates/event-card-modal.hbs';
-
+import countries from '../json/countries.json';
+import selectOptionsTpl from '../templates/selectOptions';
 
 
 const refs = {
@@ -12,11 +13,17 @@ const refs = {
     modalOpen: document.querySelector('.backdrop'),
     eventModalContainer: document.querySelector('.modal-event-card'),
     buttonCloseModal: document.querySelector('.modal__btn-close'),
-    lightboxOverlay: document.querySelector('.backdrop')
+    lightboxOverlay: document.querySelector('.backdrop'),
+    selectCountry: document.querySelector('.select')
 }
 
 const newsApiService = new NewsApiService();
+const optionsMarkup = createSelectorOptionsMarkup(countries);
+var inputValue;
+var selectValue;
+refs.selectCountry.insertAdjacentHTML('beforeend', optionsMarkup);
 
+refs.selectCountry.addEventListener('change', debounce(onSelectCountry, 1000));
 refs.searchInput.addEventListener('input', debounce(onSearch, 1000));
 refs.eventsContainer.addEventListener('click', onEventClick);
 
@@ -24,9 +31,19 @@ refs.eventsContainer.addEventListener('click', onEventClick);
 function onSearch(e) {
   e.preventDefault();
   resetPage();
+  inputValue = e.target.value;
+  newsApiService.query = inputValue.trim();
+  newsApiService.countryQuery = selectValue;
+  newsApiService.fetchEmbedded().then(appendEventsMarkup)   
+}
 
-    newsApiService.query = e.target.value.trim();
-    newsApiService.fetchEmbedded().then(appendEventsMarkup)   
+function onSelectCountry(e) {
+  e.preventDefault();
+  resetPage();
+  selectValue = e.target.value;
+  newsApiService.query = inputValue.trim();
+  newsApiService.countryQuery = selectValue;
+  newsApiService.fetchEmbedded().then(appendEventsMarkup)   
 }
 
 function appendEventsMarkup(events) {
@@ -68,4 +85,6 @@ function resetPage() {
     refs.eventModalContainer.innerHTML = '';
 }
 
-
+function createSelectorOptionsMarkup(options) {
+  return selectOptionsTpl(options);
+}

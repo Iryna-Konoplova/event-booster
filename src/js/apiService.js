@@ -1,5 +1,5 @@
 const API_KEY = 'uHSLi07StIOlriMPxJGxUbSYsHDs6AFx';
-const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json';
+const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?size=20';
 
 export default class NewsApiService {
     constructor() {
@@ -9,8 +9,18 @@ export default class NewsApiService {
     }
 
     fetchEmbedded() {
-        // console.log(this)
-        const url = `${BASE_URL}?keyword=${this.searchQuery}&&countryCode=${this._countryQuery}&size=20&apikey=${API_KEY}`;
+
+        var urlParams = '';
+        if (this.searchQuery != '') {
+            urlParams += `&keyword=${this.searchQuery}`;
+        }
+
+        if (this._countryQuery != undefined) {
+            urlParams += `&countryCode=${this._countryQuery}`;
+        }
+
+        const url = `${BASE_URL}${urlParams}&apikey=${API_KEY}`;
+        console.log(urlParams);
         return  fetch(url)
                   .then(r => r.json())
                   .then(data => {
@@ -32,8 +42,8 @@ export default class NewsApiService {
         return this._countryQuery;
     }
 
-    set countryQueryy(newQuery) {
-        this._countryQuery = newСountryQuery;
+    set countryQuery(newQuery) {
+        this._countryQuery = newQuery;
     }
     
     fetchEventById() {
