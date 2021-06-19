@@ -22,7 +22,8 @@ refs.eventsContainer.addEventListener('click', onEventClick);
 
 
 function onSearch(e) {
-    e.preventDefault();
+  e.preventDefault();
+  resetPage();
 
     newsApiService.query = e.target.value.trim();
     newsApiService.fetchEmbedded().then(appendEventsMarkup)   
@@ -34,9 +35,11 @@ function appendEventsMarkup(events) {
 
 function onEventClick(e) {
 //   evt.preventDefault();
-//   if (!evt.target.classList.contains('gallery__image')) {
-//     return;
-//   }
+  resetPage();
+
+  if (e.target.classList.contains('event-card-set')) {
+    return;
+  }
 
   refs.modalOpen.classList.add('is-hidden');
   newsApiService.idEvent = e.target.id;
@@ -61,5 +64,8 @@ function onCloseModalEscapeKeydown(evt) {
   }
 }
 
+function resetPage() {
+    refs.eventModalContainer.innerHTML = '';
+}
 
 
