@@ -2,6 +2,8 @@
 // import '../sass/main';
 import eventCardTpl from '../templates/event-card.hbs';
 const axios = require('axios');
+// import countries from '../json/countries.json';
+// import selectOptionsTpl from '../templates/selectOptions';
 
 const BASE_DISCOVERY_URL = 'https://app.ticketmaster.com/discovery/v2/';
 const DISCOVERY_KEY = 'apu3UNEIGJkixbh9YXHiOuAG74i7PIT2';
@@ -19,8 +21,6 @@ markupHomePage();
 
 async function fetchEvents(countryCode = ''){ 
   let sizePage;
-  let page = 0;
-  try{
     if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280) {
     sizePage = 21;
     } else{
@@ -28,47 +28,33 @@ async function fetchEvents(countryCode = ''){
     };
 
     const data = await axios.get(`${BASE_DISCOVERY_URL}events.json?countryCode=${countryCode}
-    &sort=date,name,asc&size=${sizePage}&page=${page}&&apikey=${DISCOVERY_KEY}`)
+    &sort=date,name,asc&size=${sizePage}&apikey=${DISCOVERY_KEY}`)
       .then(response => {
-        page += 1;
-        return response.data._embedded.events
+        return response.data._embedded
       }) 
       return data;
-  }catch (err) {
-    console.log(err)  ;
-  }
 }  
 
 // Функция получения "countryCode" с помощью "IPSTACK API"
 async function fetchUserCountryCodeByIp() {
-  try{
     const userCountryCode = await axios.get(`${BASE_IPSTACK_URL}check?access_key=${IPSTACK_KEY}`)
       .then(response => response.data.country_code);
     return userCountryCode;
-  }catch (error){
-    console.log(error);
-  }
 }
 
 //Функция отрисовки event`s по "countryCode" or "All countries"
 async function markupHomePage() {
   try{
-    await fetchUserCountryCodeByIp()
-    .then(countryCode => {
-       refs.select.value = countryCode;
-       fetchEvents(countryCode).then( r => appendEventsMarkup(r))
-       return fetchEvents(countryCode)
-                
-    })
-    .then(response => {
-      if(!response){
-        refs.select.value = '';
-        return fetchEvents()
-                .then(response => {
-                  return appendEventsMarkup(response)
-                })
-  }
-    })
+    const countryCode = await fetchUserCountryCodeByIp();
+    // console.log('markupHomePage ~ countryCode', countryCode)
+    fetchEvents(countryCode).then(response => {
+      if(!response) {  
+        fetchEvents('').then(response => appendEventsMarkup(response.events))
+      }else{
+        refs.select.value = countryCode;
+        appendEventsMarkup(response.events)
+      }
+    }) 
     }catch (error){
       console.log(error)
     }
@@ -78,3 +64,10 @@ function appendEventsMarkup(event) {
   const eventMarkup = eventCardTpl(event);
   refs.eventsContainer.insertAdjacentHTML('beforeend', eventMarkup);
 }
+
+// const optionsMarkup = createSelectorOptionsMarkup(countries);
+// refs.select.insertAdjacentHTML('beforeend', optionsMarkup);
+
+// function createSelectorOptionsMarkup(options) {
+//   return selectOptionsTpl(options);
+// }
