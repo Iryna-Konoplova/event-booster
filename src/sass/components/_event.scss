@@ -3,172 +3,176 @@
   z-index: 2;
   display: flex;
   flex-wrap: wrap;
-  margin-top: -60px;
+  // margin-top: -60px;
+  
  
-
-
   @media screen and (min-width: 320px) {
-    height: 2635px;
-    
+    // height: 2635px;
+    min-height: 700px;
+    margin-top: -42px;
   }
   
 
   @media screen and (min-width: 768px) {
-    height: 2454px;
-     
+    // height: 2454px;
+    min-height: 700px;
+    // margin-right: -12px;
+    // margin-left: 2.6px;
+    // margin-top: -60px;
   }
 
   @media screen and (min-width: 1280px) {
-    height: 1760px;
-    
-    
+    // height: 1760px;
+    min-height: 700px;
+    margin-right: -50px;
+    margin-top: -47px;
+    // flex-basis: calc(100% / 4);
   }
 }
 
-.event-item {
-  @media screen and (min-width: 320px) {
-    width: 138px;
-    flex-basis: calc(100% / 2);
-  }
+// .event-item {
+//   @media screen and (min-width: 320px) {
+//     width: 138px;
+//   }
 
-  @media screen and (min-width: 768px) {
-    width: 194px;
-    flex-basis: calc(100% / 3);
-  }
+//   @media screen and (min-width: 768px) {
+//     width: 194px;
+//     flex-basis: calc(100% / 3);
+//   }
 
-  @media screen and (min-width: 1280px) {
-    width: 194px;
-    flex-basis: calc(100% / 4);
-  }
-}
+//   @media screen and (min-width: 1280px) {
+//     width: 194px;
+//     flex-basis: calc(100% / 4);
+//   }
+// }
 
-.event-item:last-child {
-  @media screen and (min-width: 320px) {
-    display: none;
-  }
+// .event-item:last-child {
+//   @media screen and (min-width: 320px) {
+//     display: none;
+//   }
 
-  @media screen and (min-width: 768px) {
-    display: inherit;
-  }
+//   @media screen and (min-width: 768px) {
+//     display: inherit;
+//   }
 
-  @media screen and (min-width: 1280px) {
-    display: none;
-  }
-}
+//   @media screen and (min-width: 1280px) {
+//     display: none;
+//   }
+// }
 
-.event-block {
-  border: 1px solid rgba(220, 86, 197, 0.3);
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  position: absolute;
+// .event-block {
+//   border: 1px solid rgba(220, 86, 197, 0.3);
+//   border-top-left-radius: 50px;
+//   border-bottom-right-radius: 50px;
+//   position: absolute;
 
-  @media screen and (min-width: 320px) {
-    width: 109px;
-    height: 101px;
-    margin-left: 29px;
-  }
+//   @media screen and (min-width: 320px) {
+//     width: 109px;
+//     height: 101px;
+//     margin-left: 29px;
+//   }
 
-  @media screen and (min-width: 768px) {
-    width: 153px;
-    height: 143px;
-    margin-left: 41px;
-  }
-}
+//   @media screen and (min-width: 768px) {
+//     width: 153px;
+//     height: 143px;
+//     margin-left: 41px;
+//   }
+// }
 
-.event-card-thumb {
-  @media screen and (min-width: 320px) {
-    width: 138px;
-    padding-top: 9px;
-    width: 128px;
-  }
+// .event-card-thumb {
+//   @media screen and (min-width: 320px) {
+//     width: 138px;
+//     padding-top: 9px;
+//     width: 128px;
+//   }
 
-  @media screen and (min-width: 768px) {
-    width: 194px;
-    padding-top: 13px;
-    width: 180px;
-  }
-}
+//   @media screen and (min-width: 768px) {
+//     width: 194px;
+//     padding-top: 13px;
+//     width: 180px;
+//   }
+// }
 
-.event-img {
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  background-color: rgb(165, 250, 190);
-  width: 100%;
+// .event-img {
+//   border-top-left-radius: 50px;
+//   border-bottom-right-radius: 50px;
+//   background-color: rgb(165, 250, 190);
+//   width: 100%;
 
-  @media screen and (min-width: 320px) {
-    height: 161px;
-  }
+//   @media screen and (min-width: 320px) {
+//     height: 161px;
+//   }
 
-  @media screen and (min-width: 768px) {
-    height: 227px;
-  }
-}
+//   @media screen and (min-width: 768px) {
+//     height: 227px;
+//   }
+// }
 
-.event-card-heading {
-  margin-top: 5px;
-  margin-bottom: 0px;
+// .event-card-heading {
+//   margin-top: 5px;
+//   margin-bottom: 0px;
 
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  text-align: center;
-  color: $title-color;
+//   font-family: Montserrat;
+//   font-style: normal;
+//   font-weight: bold;
+//   text-align: center;
+//   color: $title-color;
 
-  @media screen and (min-width: 320px) {
-    font-size: 14px;
-    line-height: 17px;
-  }
+//   @media screen and (min-width: 320px) {
+//     font-size: 14px;
+//     line-height: 17px;
+//   }
 
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 20px;
-  }
-}
+//   @media screen and (min-width: 768px) {
+//     font-size: 16px;
+//     line-height: 20px;
+//   }
+// }
 
-.event-card-date {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-  color: $primary-text-color;
+// .event-card-date {
+//   font-family: Montserrat;
+//   font-style: normal;
+//   font-weight: normal;
+//   text-align: center;
+//   color: $primary-text-color;
 
-  margin-top: 5px;
-  margin-bottom: 0px;
+//   margin-top: 5px;
+//   margin-bottom: 0px;
 
-  @media screen and (min-width: 320px) {
-    font-size: 14px;
-    line-height: 17px;
-  }
+//   @media screen and (min-width: 320px) {
+//     font-size: 14px;
+//     line-height: 17px;
+//   }
 
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 20px;
-  }
-}
+//   @media screen and (min-width: 768px) {
+//     font-size: 16px;
+//     line-height: 20px;
+//   }
+// }
 
-.event-card-locate {
-  margin-top: 5px;
-  margin-left: auto;
-  margin-right: auto;
-}
+// .event-card-locate {
+//   margin-top: 5px;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
 
-.event-locate-text {
-  margin-top: 0px;
-  margin-top: 0px;
+// .event-locate-text {
+//   margin-top: 0px;
+//   margin-top: 0px;
 
-  text-align: center;
-  color: $primary-text-color;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
+//   text-align: center;
+//   color: $primary-text-color;
+//   font-family: Montserrat;
+//   font-style: normal;
+//   font-weight: 600;
 
-  @media screen and (min-width: 320px) {
-    font-size: 12px;
-    line-height: 15px;
-  }
+//   @media screen and (min-width: 320px) {
+//     font-size: 12px;
+//     line-height: 15px;
+//   }
 
-  @media screen and (min-width: 768px) {
-    font-size: 14px;
-    line-height: 17px;
-  }
-}
+//   @media screen and (min-width: 768px) {
+//     font-size: 14px;
+//     line-height: 17px;
+//   }
+// }

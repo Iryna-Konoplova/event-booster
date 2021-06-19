@@ -1,7 +1,8 @@
 .event-card-list {
   @media screen and (min-width: 1280px) {
-      margin-right: 70px;
+      // margin-right: 70px;
       margin-bottom: 63px;
+      flex-basis: calc(100% / 4);
     &:nth-child(4n) {
         margin-right: 0px;
               };
@@ -10,7 +11,8 @@
     }
       }
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-     margin-right: 27px;
+    //  margin-right: 27px;
+    flex-basis: calc(100% / 3);
      margin-bottom: 58px;
     &:nth-child(3n) {
         margin-right: 0px;
@@ -20,7 +22,8 @@
     }
      }
   @media screen and (max-width: 767px) {
-        margin-right: 14px;
+        // margin-right: 14px;
+        flex-basis: calc(100% / 2);
         margin-bottom: 29px;
        &:nth-child(2n) {
         margin-right: 0px;
@@ -33,6 +36,7 @@
 .event-card-information {
   @media screen and (min-width: 1280px) {
     display: block;
+    width: 180px;
   }
 }
 .event-card-photo {
@@ -50,21 +54,22 @@
   @media screen and (min-width: 1280px) {
     width: 153px;
     height: 143px;
-    margin-left: 40px;
-    margin-top: -20px;
+    margin-left: 41px;
+    margin-top: -13px;
   }
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 153px;
     height: 143px;
     border: 1px solid $border-card-color;
-    margin-left: 40px;
-    margin-top: -20px;
+    margin-left: 41px;;
+    margin-top: -13px;
   }
   @media screen and (max-width: 767px) {
-    width: 108px;
+    width: 109px;
     height: 101px;
     margin-left: 30px;
-    margin-top: -10px;
+    margin-left: 29px;
+    margin-top: -9px;
   }
 }
 .event-card-img {
@@ -163,8 +168,26 @@
     line-height: 1.25;
   }
 }
+// .event-card-icon {
+//   background-image: url("/images/vector.jpg");
+//   width: 7px;
+//   height: 10px;
+// }
+
 .event-card-icon {
-  background-image: url("/images/vector.jpg");
-  width: 7px;
-  height: 10px;
+  content: '';
+  display: inline-block;
+  // margin-right: 3px;
+  margin-right: -4px;
+  width: 6px;
+  height: 9px;
+  background-image: url(../images/location.svg);
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 768px) {
+    width: 7px;
+    height: 10px;
+    margin-right: -5px;
+  }
 }
+
