@@ -47,8 +47,8 @@ function onEventClick(e) {
   window.addEventListener('keydown', onCloseModalEscapeKeydown);
 }
 
-function appendEventModalMarkup(events) {
-  refs.eventModalContainer.insertAdjacentHTML('beforeend', eventCardModalTpl(events));
+function appendEventModalMarkup(data) {
+  refs.eventModalContainer.insertAdjacentHTML('beforeend', eventCardModalTpl(data));
 }
 
 function onButtonCloseModalClick(evt) {
