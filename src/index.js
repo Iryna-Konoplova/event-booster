@@ -28,14 +28,14 @@ inputEvent.addEventListener('input',  (event) => {
   searchEvent(inputValue, selectValue);
 });
 
-const refs = {
-  select: document.querySelector('.select')
-}
+// const refs = {
+//   select: document.querySelector('.select')
+// }
 
 
-const optionsMarkup = createSelectorOptionsMarkup(countries);
-refs.select.insertAdjacentHTML('beforeend', optionsMarkup);
+// const optionsMarkup = createSelectorOptionsMarkup(countries);
+// refs.select.insertAdjacentHTML('beforeend', optionsMarkup);
 
-function createSelectorOptionsMarkup(options) {
-  return selectOptionsTpl(options);
-}
+// function createSelectorOptionsMarkup(options) {
+//   return selectOptionsTpl(options);
+// }
