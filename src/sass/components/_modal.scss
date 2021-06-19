@@ -193,6 +193,11 @@
 
 .modal__price {
   display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
+  }
 }
 
 .modal__price > .modal__item {
@@ -200,6 +205,7 @@
 }
 
 .modal__icon-barcode {
+  background-image: url('../images/ticket2.svg');
   display: inline-block;
   width: 24px;
   height: 16px;
