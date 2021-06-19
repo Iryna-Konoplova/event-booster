@@ -26,6 +26,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "handlebars-helper-svg": "^2.0.2",
     "lodash.debounce": "^4.0.8"
   }
 }
