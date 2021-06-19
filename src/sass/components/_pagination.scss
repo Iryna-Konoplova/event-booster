@@ -1,4 +1,5 @@
-.pagination-list {
+// new
+.tui-pagination {
   position: relative;
   z-index: 2;
   display: flex;
@@ -12,7 +13,7 @@
   //   padding: 0;
 }
 
-.pagination-item {
+.tui-page-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,10 +41,15 @@
     border: 1px solid $title-color;
     border-radius: 10px 0px;
   }
-  // активное одинаково с ховером
-  //   &.pagination-item--active {
-  //     color: $title-color;
-  //     border: 1px solid $title-color;
-  //     border-radius: 10px 0px;
-  //   }
+
+  &.tui-is-selected {
+    color: $title-color;
+    border: 1px solid $title-color;
+    border-radius: 10px 0px;
+  }
+}
+
+.tui-next,
+.tui-prev {
+  display: none;
 }

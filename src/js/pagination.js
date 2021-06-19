@@ -1,30 +1,38 @@
-// ссылка на библиотеку https://pagination.js.org/index.html
-// выбранный тип Asynchronous & Dynamic total number
+import NewsApiService from './apiService';
+import Pagination from 'tui-pagination'; /* ES6 */
 
-// import { BASE_URL, API_KEY } from '...........'; получаем доступ к основной ссылке и ключу
-// import { onRenderingSearchEvents } from './serch-event';   получаем доступ к функции, которая рендерит события на странице
+const apiService = new NewsApiService();
 
-// function getPagination(options) {
-//   $('#pagination-container').pagination({
-//     dataSource: `${BASE_URL}?${options}&apikey=${API_KEY}`,
-//     locator: '_embedded.events',
-//     totalNumberLocator: function (response) {
+const container = document.getElementById('tui-pagination-container');
+const instance = new Pagination(container, {
+  totalItems: 1000,
+  itemsPerPage: 24,
+  visiblePages: 5,
+});
 
-//       // you can return totalNumber by analyzing response content. Не понимаю, как на практике будет работать функция ниже.
-//       Или лучше прописать как - то через if несколько вариантов в зависимости от результатов поиска ??
+// instance.setItemsPerPage(10);
 
-//       return Math.floor(Math.random() * (1000 - 100)) + 100;
-//     },
+// const currentPage = apiService.page + 1;
+// export default function getPage(array) {
+//   //   try {
+//   // const result = await apiService.fetchEvents();
+//   const totalElements = array.page.totalElements;
+//   console.log(totalElements);
 
-//     alias: {
-//       pageNumber: 'page',
-//       pageSize: 'size',
-//     },
-//     pageSize: 24,
-//     callback: function (data) {
-//       onRenderingSearchEvents(data, '#dataContainer');
-//     },
-//     showPrevious: false,
-//     showNext: false,
-//   });
+//   pagination.setTotalItems(totalElements);
+
+//   pagination.movePageTo(currentPage);
+//   // getEvents(array);
+//   //   } catch (error) {
+//   //     console.error(error);
+//   //   }
 // }
+
+// const options = {
+//   totalItems: 1000,
+//   itemsPerPage: 24,
+//   visiblePages: 5,
+//   page: currentPage,
+// };
+
+// const pagination = new Pagination(container, options);
