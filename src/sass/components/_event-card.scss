@@ -1,38 +1,68 @@
-.events-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+// .events-card {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   align-items: center;
 
-  @media screen and (min-width: 1280px) {
-    margin: auto;
-    width: 946px;
-    padding-top: 387px;
-    padding-right: 70px;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    width: 610px;
-    padding-top: 304px;
-    padding-right: 27px;
-  }
-  @media screen and (max-width: 767px) {
-    width: 280px;
-    padding-top: 387px;
-    padding-right: 14px;
-  }
-}
-.events-list-item {
+//   @media screen and (min-width: 1280px) {
+//     margin: auto;
+//     width: 946px;
+//     padding-top: 387px;
+//     padding-right: 70px;
+//   }
+//   @media screen and (min-width: 768px) and (max-width: 1279px) {
+//     width: 610px;
+//     padding-top: 304px;
+//     padding-right: 27px;
+//   }
+//   @media screen and (max-width: 767px) {
+//     width: 280px;
+//     padding-top: 387px;
+//     padding-right: 14px;
+//   }
+// }
+.event-card-list {
   @media screen and (min-width: 1280px) {
     flex-basis: calc(100% / 4);
+    
   }
+
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     flex-basis: calc(100% / 3);
+   // padding-right: 27px;
+
+    
   }
 
   @media screen and (max-width: 767px) {
     flex-basis: calc(100% / 2);
+       //padding-right: 14px;
   }
 }
+ 
+// .event-card-list:nth-child(3n) {
+  
+//     padding-right: 0px;
+//    }
+  
+
+// .event-card-list:not(:last-child) {
+//   @media screen and (min-width: 1280px) {
+//      padding-right: 70px;
+//   }
+//   @media screen and (min-width: 768px) and (max-width: 1279px) {
+//     padding-right: 27px;
+//   }
+//    @media screen and (max-width: 767px) {
+//        padding-right: 14px;
+//    }
+
+
+
+// }
+
+
 .event-card-information {
   @media screen and (min-width: 1280px) {
     display: block;
@@ -124,14 +154,17 @@
   color: $title-color;
 
   @media screen and (min-width: 1280px) {
+    width: 180px;
     font-size: 16px;
     line-height: 1.25;
   }
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+     width: 180px;
     font-size: 16px;
     line-height: 1.25;
   }
   @media screen and (max-width: 767px) {
+     width: 128px;
     width: 128px;
     font-size: 14px;
     line-height: 1.21;
