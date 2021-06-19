@@ -23,21 +23,32 @@
 // }
 .event-card-list {
   @media screen and (min-width: 1280px) {
-    flex-basis: calc(100% / 4);
+    ///flex-basis: calc(100% / 4);
+    padding-right: 70px;
+
+    &:nth-child(4n) {
+        padding-right: 0px;
+      }
     
   }
 
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    flex-basis: calc(100% / 3);
-   // padding-right: 27px;
+    //flex-basis: calc(100% / 3);
+    padding-right: 27px;
+    &:nth-child(3n) {
+        padding-right: 0px;
+      }
 
     
   }
 
   @media screen and (max-width: 767px) {
-    flex-basis: calc(100% / 2);
-       //padding-right: 14px;
+    //flex-basis: calc(100% / 2);
+       padding-right: 14px;
+       &:nth-child(2n) {
+        padding-right: 0px;
+      }
   }
 }
  
