@@ -20,7 +20,7 @@ export default class NewsApiService {
         }
 
         const url = `${BASE_URL}${urlParams}&apikey=${API_KEY}`;
-        console.log(urlParams);
+        console.log(url);
         return  fetch(url)
                   .then(r => r.json())
                   .then(data => {
