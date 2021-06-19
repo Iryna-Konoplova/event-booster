@@ -1,29 +1,29 @@
 
 
-const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=LgD2oGhbb5VYMHYtmGPQVhOZglCXA59d';
-//https://app.ticketmaster.com/discovery/v2/events.json?keyword=Dollar&countryCode=US
+// const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=LgD2oGhbb5VYMHYtmGPQVhOZglCXA59d';
+// //https://app.ticketmaster.com/discovery/v2/events.json?keyword=Dollar&countryCode=US
 
-export default function searchEvent(inputValue, selectValue) {
+// export default function searchEvent(inputValue, selectValue) {
 
-  var urlParams = '';
-    if (inputValue != '') {
-      urlParams += `&keyword=${inputValue}`;
-    }
+//   var urlParams = '';
+//     if (inputValue != '') {
+//       urlParams += `&keyword=${inputValue}`;
+//     }
 
-    if (selectValue != undefined) {
-      urlParams += `&countryCode=${selectValue}`;
-    }
+//     if (selectValue != undefined) {
+//       urlParams += `&countryCode=${selectValue}`;
+//     }
 
 
-    return fetch(`${BASE_URL}${urlParams}`)
-        .then(response => {
-            if (response.ok) return response.json();
-            throw new Error('Error fetching data');
-        })
-        .catch(error => {
+//     return fetch(`${BASE_URL}${urlParams}`)
+//         .then(response => {
+//             if (response.ok) return response.json();
+//             throw new Error('Error fetching data');
+//         })
+//         .catch(error => {
 
-        });
-}
+//         });
+// }
 
 /*var debounce = require('lodash.debounce');
 

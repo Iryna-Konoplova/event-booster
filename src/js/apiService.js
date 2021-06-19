@@ -37,13 +37,13 @@ export default class NewsApiService {
     }
     
     fetchEventById() {
-        const id = `${BASE_URL}?id=${this.id}&apikey=${API_KEY}`;
+        const id = `https://app.ticketmaster.com/discovery/v2/events/${this.id}.json?apikey=${API_KEY}`;
         return fetch(id)
             .then(r => r.json())
             .then(data => {
                 console.log(data)
-                console.log(data._embedded.events)
-                return data._embedded.events
+                // console.log(data._embedded.events)
+                return data
             })
             .catch(() => {
                 errorFromServerById();

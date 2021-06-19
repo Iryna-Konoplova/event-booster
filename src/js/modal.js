@@ -11,7 +11,7 @@ const refs = {
     eventCard: document.querySelector('.event-card-list'),
     modalOpen: document.querySelector('.backdrop'),
     eventModalContainer: document.querySelector('.modal-event-card'),
-  buttonCloseModal: document.querySelector('.modal__btn-close'),
+    buttonCloseModal: document.querySelector('.modal__btn-close'),
     lightboxOverlay: document.querySelector('.backdrop')
 }
 
@@ -47,8 +47,8 @@ function onEventClick(e) {
   window.addEventListener('keydown', onCloseModalEscapeKeydown);
 }
 
-function appendEventModalMarkup(events) {
-  refs.eventModalContainer.insertAdjacentHTML('beforeend', eventCardModalTpl(events));
+function appendEventModalMarkup(data) {
+  refs.eventModalContainer.insertAdjacentHTML('beforeend', eventCardModalTpl(data));
 }
 
 function onButtonCloseModalClick(evt) {
