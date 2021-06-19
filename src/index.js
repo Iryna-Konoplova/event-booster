@@ -23,7 +23,7 @@ selectCountry.addEventListener('change', (event) => {
   searchEvent(inputValue, selectValue);
 });
 
-inputEvent.addEventListener('input',  (event) => {
+inputEvent.addEventListener('input', (event) => {
   inputValue = event.target.value;
   searchEvent(inputValue, selectValue);
 });
