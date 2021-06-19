@@ -1,46 +1,75 @@
-.events-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+// .events-card {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-around;
+//   align-items: center;
 
+//   @media screen and (min-width: 1280px) {
+//     margin: auto;
+//     width: 946px;
+//     padding-top: 387px;
+//     padding-right: 70px;
+//   }
+//   @media screen and (min-width: 768px) and (max-width: 1279px) {
+//     width: 610px;
+//     padding-top: 304px;
+//     padding-right: 27px;
+//   }
+//   @media screen and (max-width: 767px) {
+//     width: 280px;
+//     padding-top: 387px;
+//     padding-right: 14px;
+//   }
+// }
+.event-card-list {
   @media screen and (min-width: 1280px) {
-    margin: auto;
-    width: 946px;
-    padding-top: 387px;
-    padding-right: 70px;
-  }
+    //flex-basis: calc(100% / 4);
+    margin-right: 70px;
+      margin-bottom: 63px;
+    &:nth-child(4n) {
+        margin-right: 0px;
+              };
+    &:nth-child(n + 17) {
+      margin-bottom: 0px;
+    }
+      }
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    width: 610px;
-    padding-top: 304px;
-    padding-right: 27px;
-  }
-  @media screen and (max-width: 767px) {
-    width: 280px;
-    padding-top: 387px;
-    padding-right: 14px;
-  }
-}
-.events-list-item {
-  @media screen and (min-width: 1280px) {
-    flex-basis: calc(100% / 4);
-  }
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    flex-basis: calc(100% / 3);
-  }
+    //flex-basis: calc(100% / 3);
+   margin-right: 27px;
+     margin-bottom: 58px;
+    &:nth-child(3n) {
+        margin-right: 0px;
+      };
+      &:nth-child(n + 19) {
+      margin-bottom: 0px;
+    }
+     }
 
   @media screen and (max-width: 767px) {
-    flex-basis: calc(100% / 2);
+   // flex-basis: calc(100% / 2);
+      margin-right: 14px;
+        margin-bottom: 29px;
+       &:nth-child(2n) {
+        margin-right: 0px;
+      }
+      &:nth-child(n + 19) {
+      margin-bottom: 0px;
+    };
   }
 }
 .event-card-information {
   @media screen and (min-width: 1280px) {
     display: block;
-    position: relative;
-    z-index: 1;
+    //position: relative;
+    //z-index: 1;
   }
 }
-.event-card-information:after {
+.event-card-photo {
+  position: relative;
+  z-index: 1;
+}
+.event-card-photo::before {
   display: inline-block;
   content: '';
   border: 1px solid $border-card-color;
@@ -53,7 +82,7 @@
     width: 153px;
     height: 143px;
     margin-left: 40px;
-    margin-top: -310px;
+    margin-top: -20px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -61,35 +90,23 @@
     height: 143px;
     border: 1px solid $border-card-color;
     margin-left: 40px;
-    margin-top: -310px;
+    margin-top: -20px;
   }
 
   @media screen and (max-width: 767px) {
     width: 108px;
     height: 101px;
     margin-left: 30px;
-    margin-top: -235px;
+    margin-top: -10px;
   }
 }
 
-.event-card-photo {
-  position: relative;
-  z-index: 1;
 
-  @media screen and (min-width: 1280px) {
-    padding-bottom: 63px;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    padding-bottom: 58px;
-  }
-  @media screen and (max-width: 767px) {
-    padding-bottom: 39px;
-  }
-}
 
 .event-card-img {
   display: block;
   border-radius: 50px 0px;
+  background-size: cover;
 
   @media screen and (min-width: 1280px) {
     width: 180px;
@@ -124,14 +141,17 @@
   color: $title-color;
 
   @media screen and (min-width: 1280px) {
+    width: 180px;
     font-size: 16px;
     line-height: 1.25;
   }
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+     width: 180px;
     font-size: 16px;
     line-height: 1.25;
   }
   @media screen and (max-width: 767px) {
+     width: 128px;
     width: 128px;
     font-size: 14px;
     line-height: 1.21;
@@ -170,18 +190,22 @@
   margin-bottom: 0px;
   text-align: center;
   color: $primary-text-color;
+  overflow-wrap:anywhere;
 
   @media screen and (min-width: 1280px) {
+     width: 180px;
     font-size: 14px;
     line-height: 1.21;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
+     width: 180px;
     font-size: 14px;
     line-height: 1.21;
   }
 
   @media screen and (max-width: 767px) {
+     width: 128px;
     font-size: 12px;
     line-height: 1.25;
   }
@@ -189,12 +213,14 @@
 
 .event-card-icon {
   @media screen and (min-width: 768px) {
+    fill: white;
     width: 7px;
     height: 10px;
   }
 }
 .event-card-icon {
   @media screen and (max-width: 767px) {
+    fill: white;
     width: 6px;
     height: 9px;
   }

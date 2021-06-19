@@ -23,7 +23,7 @@ selectCountry.addEventListener('change', (event) => {
   searchEvent(inputValue, selectValue);
 });
 
-inputEvent.addEventListener('input',  (event) => {
+inputEvent.addEventListener('input', (event) => {
   inputValue = event.target.value;
   searchEvent(inputValue, selectValue);
 });
@@ -33,9 +33,9 @@ inputEvent.addEventListener('input',  (event) => {
 // }
 
 
-const optionsMarkup = createSelectorOptionsMarkup(countries);
-refs.select.insertAdjacentHTML('beforeend', optionsMarkup);
+// const optionsMarkup = createSelectorOptionsMarkup(countries);
+// refs.select.insertAdjacentHTML('beforeend', optionsMarkup);
 
-function createSelectorOptionsMarkup(options) {
-  return selectOptionsTpl(options);
-}
+// function createSelectorOptionsMarkup(options) {
+//   return selectOptionsTpl(options);
+// }
