@@ -6,7 +6,6 @@ export default class NewsApiService {
     this.searchQuery = '';
     this._countryQuery = '';
     this.id = '';
-    this.currentPage = 0; // main
   }
 
   fetchEmbedded() {
