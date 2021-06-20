@@ -24,14 +24,14 @@
                 </svg>
                 <p class="modal__item ">Standart {{priceRanges.0.min}} {{priceRanges.0.currency}}</p>
             </div>
-            <button class="modal__btn-buy" type="button"><a href="{{this._embedded.attractions.0.url}}">buy tickets</a></button>
+            <button class="modal__btn-buy" type="button"><a a class="linkModal" href="{{this._embedded.attractions.0.url}}">buy tickets</a></button>
             <div class="modal__price">
                 <svg class="modal__icon-barcode">
                     <use href="./images/sprite.svg#icon-barcode"></use>
                 </svg>
                 <p class="modal__item">Vip {{priceRanges.0.max}} {{priceRanges.0.currency}}</p>
             </div>
-            <button class="modal__btn-buy" type="button"><a href="{{this._embedded.attractions.0.url}}">buy tickets</a></button>
+            <button class="modal__btn-buy" type="button"><a a class="linkModal" href="{{this._embedded.attractions.0.url}}">buy tickets</a></button>
         </div>
     </div>
     <button type="button" class="modal__btn-more">more from this autor</button>
