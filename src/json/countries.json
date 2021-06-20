@@ -5,15 +5,7 @@
   },
   {
     "countryCode": "AD",
-    "country": "Andorra"
-  },
-  {
-    "countryCode": "AI",
-    "country": "Anguilla"
-  },
-  {
-    "countryCode": "AR",
-    "country": "Argentina"
+    "country": "Andorra"  
   },
   {
     "countryCode": "AU",
@@ -21,67 +13,15 @@
   },
   {
     "countryCode": "AT",
-    "country": "Austria"
-  },
-  {
-    "countryCode": "AZ",
-    "country": "Azerbaijan"
-  },
-  {
-    "countryCode": "BS",
-    "country": "Bahamas"
-  },
-  {
-    "countryCode": "BH",
-    "country": "Bahrain"
-  },
-  {
-    "countryCode": "BB",
-    "country": "Barbados"
+    "country": "Austria"  
   },
   {
     "countryCode": "BE",
     "country": "Belgium"
   },
   {
-    "countryCode": "BM",
-    "country": "Bermuda"
-  },
-  {
-    "countryCode": "BR",
-    "country": "Brazil"
-  },
-  {
-    "countryCode": "BG",
-    "country": "Bulgaria"
-  },
-  {
     "countryCode": "CA",
     "country": "Canada"
-  },
-  {
-    "countryCode": "CL",
-    "country": "Chile"
-  },
-  {
-    "countryCode": "CN",
-    "country": "China"
-  },
-  {
-    "countryCode": "CO",
-    "country": "Colombia"
-  },
-  {
-    "countryCode": "CR",
-    "country": "Costa Rica"
-  },
-  {
-    "countryCode": "HR",
-    "country": "Croatia"
-  },
-  {
-    "countryCode": "CY",
-    "country": "Cyprus"
   },
   {
     "countryCode": "CZ",
@@ -92,156 +32,44 @@
     "country": "Denmark"
   },
   {
-    "countryCode": "DO",
-    "country": "Dominican Republic"
-  },
-  {
-    "countryCode": "EC",
-    "country": "Ecuador"
-  },
-  {
-    "countryCode": "EE",
-    "country": "Estonia"
-  },
-  {
-    "countryCode": "FO",
-    "country": "Faroe Islands"
-  },
-  {
     "countryCode": "FI",
-    "country": "Finland"
+    "country": "Finland"  
   },
   {
     "countryCode": "FR",
-    "country": "France"
-  },
-  {
-    "countryCode": "GE",
-    "country": "Georgia"
+    "country": "France"  
   },
   {
     "countryCode": "DE",
     "country": "Germany"
   },
   {
-    "countryCode": "GH",
-    "country": "Ghana"
-  },
-  {
-    "countryCode": "GI",
-    "country": "Gibraltar"
-  },
-  {
     "countryCode": "GB",
     "country": "Great Britain"
-  },
-  {
-    "countryCode": "GR",
-    "country": "Greece"
-  },
-  {
-    "countryCode": "HK",
-    "country": "Hong Kong"
-  },
-  {
-    "countryCode": "HU",
-    "country": "Hungary"
-  },
-  {
-    "countryCode": "IS",
-    "country": "Iceland"
-  },
-  {
-    "countryCode": "IN",
-    "country": "India"
   },
   {
     "countryCode": "IE",
     "country": "Ireland"
   },
   {
-    "countryCode": "IL",
-    "country": "Israel"
-  },
-  {
-    "countryCode": "IT",
-    "country": "Italy"
-  },
-  {
-    "countryCode": "JM",
-    "country": "Jamaica"
-  },
-  {
-    "countryCode": "JP",
-    "country": "Japan"
-  },
-  {
-    "countryCode": "KR",
-    "country": "Korea, Republic of"
-  },
-  {
-    "countryCode": "LV",
-    "country": "Latvia"
-  },
-  {
-    "countryCode": "LB",
-    "country": "Lebanon"
-  },
-  {
-    "countryCode": "LT",
-    "country": "Lithuania"
-  },
-  {
     "countryCode": "LU",
     "country": "Luxembourg"
-  },
-  {
-    "countryCode": "MY",
-    "country": "Malaysia"
-  },
-  {
-    "countryCode": "MT",
-    "country": "Malta"
   },
   {
     "countryCode": "MX",
     "country": "Mexico"
   },
   {
-    "countryCode": "MC",
-    "country": "Monaco"
-  },
-  {
-    "countryCode": "ME",
-    "country": "Montenegro"
-  },
-  {
-    "countryCode": "MA",
-    "country": "Morocco"
-  },
-  {
     "countryCode": "NL",
     "country": "Netherlands"
-  },
-  {
-    "countryCode": "AN",
-    "country": "Netherlands Antilles"
   },
   {
     "countryCode": "NZ",
     "country": "New Zealand"
   },
   {
-    "countryCode": "ND",
-    "country": "Northern Ireland"
-  },
-  {
     "countryCode": "NO",
     "country": "Norway"
-  },
-  {
-    "countryCode": "PE",
-    "country": "Peru"
   },
   {
     "countryCode": "PL",
@@ -250,42 +78,6 @@
   {
     "countryCode": "PT",
     "country": "Portugal"
-  },
-  {
-    "countryCode": "RO",
-    "country": "Romania"
-  },
-  {
-    "countryCode": "RU",
-    "country": "Russian Federation"
-  },
-  {
-    "countryCode": "LC",
-    "country": "Saint Lucia"
-  },
-  {
-    "countryCode": "SA",
-    "country": "Saudi Arabia"
-  },
-  {
-    "countryCode": "RS",
-    "country": "Serbia"
-  },
-  {
-    "countryCode": "SG",
-    "country": "Singapore"
-  },
-  {
-    "countryCode": "SK",
-    "country": "Slovakia"
-  },
-  {
-    "countryCode": "SI",
-    "country": "Slovenia"
-  },
-  {
-    "countryCode": "ZA",
-    "country": "South Africa"
   },
   {
     "countryCode": "ES",
@@ -298,37 +90,5 @@
   {
     "countryCode": "CH",
     "country": "Switzerland"
-  },
-  {
-    "countryCode": "TW",
-    "country": "Taiwan"
-  },
-  {
-    "countryCode": "TH",
-    "country": "Thailand"
-  },
-  {
-    "countryCode": "TT",
-    "country": "Trinidad and Tobago"
-  },
-  {
-    "countryCode": "TR",
-    "country": "Turkey"
-  },
-  {
-    "countryCode": "UA",
-    "country": "Ukraine"
-  },
-  {
-    "countryCode": "AE",
-    "country": "United Arab Emirates"
-  },
-  {
-    "countryCode": "UY",
-    "country": "Uruguay"
-  },
-  {
-    "countryCode": "VE",
-    "country": "Venezuela"
-  }  
+  }
 ]
