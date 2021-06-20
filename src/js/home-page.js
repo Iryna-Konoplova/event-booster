@@ -26,7 +26,6 @@ async function fetchEvents(countryCode = ''){
     } else{
     sizePage = 20;
     };
-
     const data = await axios.get(`${BASE_DISCOVERY_URL}events.json?countryCode=${countryCode}
     &sort=date,name,asc&size=${sizePage}&apikey=${DISCOVERY_KEY}`)
       .then(response => {
