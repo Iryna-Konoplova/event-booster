@@ -19,7 +19,7 @@ const refs = {
 
 const newsApiService = new NewsApiService();
 const optionsMarkup = createSelectorOptionsMarkup(countries);
-var inputValue;
+var inputValue = '';
 var selectValue;
 refs.selectCountry.insertAdjacentHTML('beforeend', optionsMarkup);
 
