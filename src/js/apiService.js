@@ -1,14 +1,28 @@
+// const API_KEY = 'uHSLi07StIOlriMPxJGxUbSYsHDs6AFx';
+// const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey='+API_KEY;
+
 const API_KEY = 'uHSLi07StIOlriMPxJGxUbSYsHDs6AFx';
-const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey='+API_KEY;
+const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
 
 export default class NewsApiService {
     constructor() {
         this.searchQuery = '';
         this._countryQuery = '';
         this.id = '';
+        this.page = 1;
+        this.totalPages = 0;
+       
     }
 
     fetchEmbedded() {
+        console.log(this)
+              let sizePage;
+        if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280) {
+        sizePage = 21;
+      } else{
+        sizePage = 20;
+        };
+        
         var urlParams = '';
         if (this.searchQuery != '') {
             urlParams += `&keyword=${this.searchQuery}`;
@@ -16,19 +30,29 @@ export default class NewsApiService {
         if (this._countryQuery != undefined) {
             urlParams += `&countryCode=${this._countryQuery}`;
         }
-        const url = `${BASE_URL}${urlParams}&size=20`;
+        const url = `${BASE_URL}events.json?size=${sizePage}${urlParams}&page=${this.page}&apikey=${API_KEY}`;
+        //  const url = `${BASE_URL}events.json?size=${sizePage}${urlParams}&page=${this.page}&apikey=${API_KEY}`;
         console.log(url);
         return  fetch(url)
                   .then(r => r.json())
                   .then(data => {
-                try {
-                    return data._embedded.events
-                }
-                catch(error) {
-                    return null;
-                }
+                //       try {
+                //     //  this.page += 1;
+                //     return data._embedded.events
+                // }
+                // catch(error) {
+                //     return null;
+                // }
+                      this.page += 1;
+                      console.log(data.page.totalPages)
+                      console.log(data._embedded.events)
+                     return data._embedded.events 
 
         })   
+    }
+
+        resetPage() {
+        this.page = 1;
     }
 
     get query() {
