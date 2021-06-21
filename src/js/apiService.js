@@ -30,7 +30,7 @@ export default class NewsApiService {
         if (this._countryQuery != undefined) {
             urlParams += `&countryCode=${this._countryQuery}`;
         }
-        const url = `${BASE_URL}events.json?size=${sizePage}${urlParams}&page=${this.page}&apikey=${API_KEY}`;
+        const url = `${BASE_URL}events.json?size=${sizePage}${urlParams}&page=${this.page}&apikey=${API_KEY}&countryCode='GB'`;
         //  const url = `${BASE_URL}events.json?size=${sizePage}${urlParams}&page=${this.page}&apikey=${API_KEY}`;
         console.log(url);
         return  fetch(url)
@@ -44,12 +44,19 @@ export default class NewsApiService {
                 //     return null;
                 // }
                       this.page += 1;
+                      console.log(data)
                       console.log(data.page.totalPages)
                       console.log(data._embedded.events)
                      return data._embedded.events 
 
         })   
     }
+
+
+
+
+
+    
 
         resetPage() {
         this.page = 1;

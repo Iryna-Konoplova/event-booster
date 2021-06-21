@@ -4,7 +4,7 @@ import eventCardTpl from '../templates/event-card.hbs';
 import eventCardModalTpl from '../templates/event-card-modal.hbs';
 import countries from '../json/countries.json';
 import selectOptionsTpl from '../templates/selectOptions';
-
+import pagination from './pagination';
 
 const refs = {
     searchInput: document.querySelector('.hero-form-field'),
@@ -34,6 +34,7 @@ function onSearch(e) {
   inputValue = e.target.value;
   newsApiService.query = inputValue.trim();
   newsApiService.countryQuery = selectValue;
+  // pagination(newsApiService.fetchEmbedded())
   newsApiService.fetchEmbedded().then(appendEventsMarkup)   
 }
 

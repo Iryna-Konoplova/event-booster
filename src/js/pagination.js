@@ -51,23 +51,75 @@
 // const pagination = new Pagination(container, options);
 
 
-import Pagination from 'tui-pagination';
+// import Pagination from 'tui-pagination';
 
-import NewsApiService from './apiService';
+// import NewsApiService from './apiService';
 
-const newsApiService = new NewsApiService();
+// const newsApiService = new NewsApiService();
 
-const container = document.getElementById('tui-pagination-container');
+// const container = document.getElementById('tui-pagination-container');
 
-const options = {
-  totalItems: 10,
-  itemsPerPage: 20,
-  visiblePages: 5,
-  page: newsApiService.page,
-  centerAlign: false,
-  firstItemClassName: 'tui-first-child',
-  lastItemClassName: 'tui-last-child',
-  template: {
+// const options = {
+//   totalItems: 10,
+//   itemsPerPage: 20,
+//   visiblePages: 5,
+//   page: newsApiService.page,
+//   centerAlign: false,
+//   firstItemClassName: 'tui-first-child',
+//   lastItemClassName: 'tui-last-child',
+//   template: {
+//     page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+//     currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+//     moveButton:
+//       '<a href="#" class="tui-page-btn tui-{{type}}">' +
+//         '<span class="tui-ico-{{type}}">{{type}}</span>' +
+//       '</a>',
+//     disabledMoveButton:
+//       '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+//         '<span class="tui-ico-{{type}}">{{type}}</span>' +
+//       '</span>',
+//     moreButton:
+//       '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+//         '<span class="tui-ico-ellip">...</span>' +
+//       '</a>'
+//   }
+// };
+
+// const pagination = new Pagination(container, options);
+
+// pagination.on('beforeMove', evt => {
+//   const { page } = evt;
+//   const result = ajax.call({page});
+
+//   if(result) {
+//     pagination.movePageTo(page);
+//   } else {
+//     return false;
+//   }
+// });
+
+// pagination.on('afterMove', ({ page }) => console.log(page));
+
+
+
+
+ import Pagination from 'tui-pagination';
+// import ВАШ_FETCH from '../js/fetch....;
+ import NewsApiService from './apiService';
+//  import 'tui-pagination/dist/tui-pagination.css';
+import fetchUserCountryCodeByIp from './home-page';
+
+ const newsApiService = new NewsApiService();
+
+ export default function renderPagination(totalItems) {
+   //console.log(totalItems);
+   const pagination = new Pagination('pagination', {
+     totalItems,
+     itemsPerPage: 20,
+     visiblePages: 5,
+    
+     // ЭТО ШАБЛОН РАЗМЕТКИ 
+    template: {
     page: '<a href="#" class="tui-page-btn">{{page}}</a>',
     currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
     moveButton:
@@ -83,20 +135,19 @@ const options = {
         '<span class="tui-ico-ellip">...</span>' +
       '</a>'
   }
-};
-
-const pagination = new Pagination(container, options);
-
-pagination.on('beforeMove', evt => {
-  const { page } = evt;
-  const result = ajax.call({page});
-
-  if(result) {
-    pagination.movePageTo(page);
-  } else {
-    return false;
-  }
-});
-
-pagination.on('afterMove', ({ page }) => console.log(page));
-
+   });
+   
+   pagination.on('afterMove', function (eventData) {
+     window.scrollTo({
+       top: 150,
+       behavior: 'smooth',
+     });
+     fetchUserCountryCodeByIp() 
+      // newsApiService.fetchEmbedded()
+    //  if (ВАШ_FETCH.ЗАПРОС№1 === false) {
+    //    ВАШ_FETCH.ЗАПРОС№2(eventData.page);
+    //  } else if (ВАШ_FETCH.ЗАПРОС№1 === true) {
+    //    ВАШ_FETCH.ЗАПРОС№1(eventData.page);
+    //  }
+   });
+ }

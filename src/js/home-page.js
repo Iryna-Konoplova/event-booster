@@ -4,6 +4,7 @@ import eventCardTpl from '../templates/event-card.hbs';
 const axios = require('axios');
 // import countries from '../json/countries.json';
 // import selectOptionsTpl from '../templates/selectOptions';
+import pagination from './pagination';
 
 const BASE_DISCOVERY_URL = 'https://app.ticketmaster.com/discovery/v2/';
 const DISCOVERY_KEY = 'apu3UNEIGJkixbh9YXHiOuAG74i7PIT2';
@@ -35,9 +36,11 @@ async function fetchEvents(countryCode = ''){
 }  
 
 // Функция получения "countryCode" с помощью "IPSTACK API"
-async function fetchUserCountryCodeByIp() {
+export default async function fetchUserCountryCodeByIp() {
     const userCountryCode = await axios.get(`${BASE_IPSTACK_URL}check?access_key=${IPSTACK_KEY}`)
-      .then(response => response.data.country_code);
+    .then(response => response.data.country_code);
+  console.log(userCountryCode)
+  pagination(userCountryCode)
     return userCountryCode;
 }
 
