@@ -98,6 +98,7 @@
 .hero-fieldset {
   position: relative;
   z-index: 3;
+  height: 40px;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -107,7 +108,8 @@
 
 .hero-form-field {
   width: 100%;
-  height: 40px;
+  // height: 40px;
+  height: 100%;
   padding: 10px 30px;
   color: $text-footer-color;
 
@@ -162,6 +164,8 @@ input.hero-form-field::placeholder {
   font-size: 16px;
   font-weight: 400;
   color: $text-footer-color;
+
+  min-height: 0px;
 
   &:hover {
     cursor: pointer;
