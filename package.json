@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "choices.js": "^9.0.1",
     "lodash.debounce": "^4.0.8"
   }
 }

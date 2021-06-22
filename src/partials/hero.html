@@ -5,11 +5,21 @@
 
       <form class="hero-form">
         <div class="hero-fieldset">
-          <input class="hero-form-field" type="text" placeholder="Start searching" name="query" />
+          <div class="hero-form-field-container">
+            <input class="hero-form-field" type="text" placeholder="Start searching" name="query" />
+            <svg class="hero-icon" width="12px" height="12px">
+              <use href="./images/hero-sprite.svg#search-icon"></use>
+            </svg>
+          </div>
 
-          <select class="hero-form-field select" name="country" id="hero-select">
-            <option value disabled selected hidden>Choose country</option>
-          </select>
+          <div class="hero-form-field-container">
+            <select class="hero-form-field select" name="country" id="hero-select">
+              <option value="" disabled selected hidden>Choose country</option>
+            </select>
+            <svg class="hero-icon choices-icon" width="15px" height="10px">
+              <use href="./images/hero-sprite.svg#polygon"></use>
+            </svg>
+          </div>
         </div>
       </form>
     </div>
