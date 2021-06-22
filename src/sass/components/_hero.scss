@@ -97,7 +97,7 @@
 
 .hero-fieldset {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -111,14 +111,13 @@
   padding: 10px 30px;
   color: $text-footer-color;
 
-  @media screen and (min-width: 768px) {
-    width: 270px;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $title-color;
   }
 
-  &.select {
-    @media screen and (max-width: 767px) {
-      margin-top: 25px;
-    }
+  @media screen and (min-width: 768px) {
+    width: 270px;
   }
 
   background: $input-background-color;
@@ -129,4 +128,88 @@
 
 input.hero-form-field::placeholder {
   color: $text-footer-color;
+}
+
+.hero-form-field-container {
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 25px;
+  }
+}
+
+.hero-icon {
+  position: absolute;
+  top: 14px;
+  right: 30px;
+  display: inline-block;
+  color: $text-footer-color;
+
+  // &.choices-icon {
+  //   top: 14px;
+  // }
+}
+
+.choices__list {
+  padding: 0;
+}
+
+.choices__inner {
+  width: 100%;
+  height: 40px;
+  padding: 10px 30px !important;
+  color: $text-footer-color;
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-footer-color;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 270px;
+  }
+
+  background: $input-background-color;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border-style: none;
+}
+
+.is-open .choices__inner {
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.is-open .choices__list--dropdown {
+  background: $input-background-color;
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  color: $text-footer-color;
+}
+
+.choices {
+  margin-bottom: 0;
+
+  &::after {
+    display: none;
+  }
+
+  &__inner {
+    font-size: 16px;
+    color: $text-footer-color;
+  }
+}
+
+.is-open .choices__item--selectable:hover {
+  color: $title-color;
+}
+
+.choices__placeholder {
+  color: $text-footer-color;
+  opacity: 1;
 }
