@@ -1,15 +1,10 @@
 'use strict';
 // import '../sass/main';
 import eventCardTpl from '../templates/event-card.hbs';
-const axios = require('axios');
+// const axios = require('axios');
+import NewsApiService from './apiService';
 import countries from '../json/countries.json';
 // import selectOptionsTpl from '../templates/selectOptions';
-
-const BASE_DISCOVERY_URL = 'https://app.ticketmaster.com/discovery/v2/';
-const DISCOVERY_KEY = 'apu3UNEIGJkixbh9YXHiOuAG74i7PIT2';
-
-// const IPSTACK_KEY = '07cf455019ad129b53694afd3f2a3f3d';
-// const BASE_IPSTACK_URL = 'http://api.ipstack.com/';
 
 const refs = {
   searchInput: document.querySelector('.hero-form-field'),
@@ -17,36 +12,20 @@ const refs = {
   select: document.querySelector('.select')
 }
 
+const newsApiService = new NewsApiService();
+
 markupHomePage();
-
-async function fetchEvents(countryCode = ''){ 
-  let sizePage;
-    if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280) {
-    sizePage = 21;
-    } else{
-    sizePage = 20;
-    };
-    const data = await axios.get(`${BASE_DISCOVERY_URL}events.json?countryCode=${countryCode}
-    &sort=date,name,asc&size=${sizePage}&apikey=${DISCOVERY_KEY}`)
-      .then(response => {
-        return response.data._embedded
-      }) 
-      return data;
-}  
-
-// Функция получения "countryCode" с помощью "IPSTACK API"
-// async function fetchUserCountryCodeByIp() {
-//     const userCountryCode = await axios.get(`${BASE_IPSTACK_URL}check?access_key=${IPSTACK_KEY}`)
-//       .then(response => response.data.country_code);
-//     return userCountryCode;
-// }
 
 //Функция отрисовки event`s по "random countryCode"
 async function markupHomePage() {
-  const randomCountryCode = getRandomCountryCode();
+  // const randomCountryCode = getRandomCountryCode();
   try{
-    fetchEvents(randomCountryCode).then(r => {
-      refs.select.value = randomCountryCode;
+    newsApiService.countryQuery = getRandomCountryCode();
+    console.log(newsApiService.countryQuery)
+    const markup = await newsApiService.fetchEventsByCountryCode().then(r => {
+      console.log(r)
+      // refs.select.value = randomCountryCode;
+      refs.select.value = newsApiService.countryQuery;
       appendEventsMarkup(r.events);
     })
 
@@ -76,3 +55,18 @@ function getRandomCountryCode() {
   const randomNumber = Math.floor(Math.random() * (countriesLengt - 0) + 0);
   return allCountryCodes[randomNumber];
 }
+
+// async function fetchEvents(countryCode = ''){ 
+//   let sizePage;
+//     if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280) {
+//     sizePage = 21;
+//     } else{
+//     sizePage = 20;
+//     };
+//     const data = await axios.get(`${BASE_DISCOVERY_URL}events.json?countryCode=${countryCode}
+//     &sort=date,name,asc&size=${sizePage}&apikey=${DISCOVERY_KEY}`)
+//       .then(response => {
+//         return response.data._embedded
+//       }) 
+//       return data;
+// }  
