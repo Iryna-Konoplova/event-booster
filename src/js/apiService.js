@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 const API_KEY = 'uHSLi07StIOlriMPxJGxUbSYsHDs6AFx';
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey='+API_KEY;
 
@@ -6,7 +8,19 @@ export default class NewsApiService {
         this.searchQuery = '';
         this._countryQuery = '';
         this.id = '';
+        if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280) {
+            this.sizePage = 21;
+            } else{
+            this.sizePage = 20;
+        };       
     }
+
+    async fetchEventsByCountryCode() {               
+          const data = await await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${this._countryQuery}
+            &sort=date,name,asc&size=${this.sizePage}&apikey=${API_KEY}`)
+            .then(response => response.data._embedded) 
+            return data;
+    }  
 
     fetchEmbedded() {
         var urlParams = '';
