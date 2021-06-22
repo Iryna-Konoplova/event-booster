@@ -7,14 +7,14 @@ import selectOptionsTpl from '../templates/selectOptions';
 
 
 const refs = {
-    searchInput: document.querySelector('.hero-form-field'),
-    eventsContainer: document.querySelector('.event-card-set'),
-    eventCard: document.querySelector('.event-card-list'),
-    modalOpen: document.querySelector('.backdrop'),
-    eventModalContainer: document.querySelector('.modal-event-card'),
-    buttonCloseModal: document.querySelector('.modal__btn-close'),
-    lightboxOverlay: document.querySelector('.backdrop'),
-    selectCountry: document.querySelector('.select')
+  searchInput: document.querySelector('.hero-form-field'),
+  eventsContainer: document.querySelector('.event-card-set'),
+  eventCard: document.querySelector('.event-card-list'),
+  modalOpen: document.querySelector('.backdrop'),
+  eventModalContainer: document.querySelector('.modal-event-card'),
+  buttonCloseModal: document.querySelector('.modal__btn-close'),
+  // lightboxOverlay: document.querySelector('.backdrop'),
+  selectCountry: document.querySelector('.select')
 }
 
 const newsApiService = new NewsApiService();
@@ -34,7 +34,7 @@ function onSearch(e) {
   inputValue = e.target.value;
   newsApiService.query = inputValue.trim();
   newsApiService.countryQuery = selectValue;
-  newsApiService.fetchEmbedded().then(appendEventsMarkup)   
+  newsApiService.fetchEmbedded().then(appendEventsMarkup)
 }
 
 function onSelectCountry(e) {
@@ -43,7 +43,7 @@ function onSelectCountry(e) {
   selectValue = e.target.value;
   newsApiService.query = inputValue.trim();
   newsApiService.countryQuery = selectValue;
-  newsApiService.fetchEmbedded().then(appendEventsMarkup)   
+  newsApiService.fetchEmbedded().then(appendEventsMarkup)
 }
 
 function appendEventsMarkup(events) {
@@ -51,7 +51,7 @@ function appendEventsMarkup(events) {
 }
 
 function onEventClick(e) {
-//   evt.preventDefault();
+  //   evt.preventDefault();
   resetPage();
 
   if (e.target.classList.contains('event-card-set')) {
@@ -61,9 +61,9 @@ function onEventClick(e) {
   refs.modalOpen.classList.add('is-hidden');
   newsApiService.idEvent = e.target.id;
   newsApiService.fetchEventById().then(appendEventModalMarkup);
-  
+
   refs.buttonCloseModal.addEventListener('click', onButtonCloseModalClick);
-  refs.lightboxOverlay.addEventListener('click', onButtonCloseModalClick);
+  refs.modalOpen.addEventListener('click', onButtonCloseModalClick);
   window.addEventListener('keydown', onCloseModalEscapeKeydown);
 }
 
@@ -72,7 +72,8 @@ function appendEventModalMarkup(data) {
 }
 
 function onButtonCloseModalClick(evt) {
-   refs.modalOpen.classList.remove('is-hidden')
+
+  refs.modalOpen.classList.remove('is-hidden')
 }
 
 function onCloseModalEscapeKeydown(evt) {
@@ -82,7 +83,7 @@ function onCloseModalEscapeKeydown(evt) {
 }
 
 function resetPage() {
-    refs.eventModalContainer.innerHTML = '';
+  refs.eventModalContainer.innerHTML = '';
 }
 
 function createSelectorOptionsMarkup(options) {

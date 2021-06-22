@@ -1,40 +1,45 @@
-    <img class="modal__circle-pic" src={{this.images.5.url}} alt={{this.name}}  />
-    <div class="modal__card">
-        <img class="modal__main-pic" src={{this.images.5.url}} alt={{this.name}}  />
-    
-        <div class="modal__content">
-            <h3 class="modal__title">info</h3>
-            <p class="modal__item">{{name}}</p>
-    
-            <h3 class="modal__title">when</h3>
-            <span class="modal__item-span">{{this.dates.start.localDate}}</span>
-            <p class="modal__item">{{this.dates.start.localTime}}({{this.dates.timezone}})</p>
-    
-            <h3 class="modal__title">where</h3>
-            <span class="modal__item-span">{{this.dates.timezone}}</span>
-            <p class="modal__item">{{_embedded.venues.0.address.line1}} </p>
-    
-            <h3 class="modal__title">who</h3>
-            <p class="modal__item">{{_embedded.attractions.0.name}}</p>
-    
-            <h3 class="modal__title">prices</h3>
-            <div class="modal__price">
-                <svg class="modal__icon-barcode">
-                    <use href="./images/sprite.svg#icon-barcode"></use>
-                </svg>
-                <p class="modal__item ">Standart {{priceRanges.0.min}} {{priceRanges.0.currency}}</p>
-            </div>
-            <button class="modal__btn-buy" type="button"><a class="linkModal" href="{{this._embedded.attractions.0.url}}">buy tickets</a></button>
-            <div class="modal__price">
-                <svg class="modal__icon-barcode">
-                    <use href="./images/sprite.svg#icon-barcode"></use>
-                </svg>
-                <p class="modal__item">Vip {{priceRanges.0.max}} {{priceRanges.0.currency}}</p>
-            </div>
-            <button class="modal__btn-buy" type="button"><a class="linkModal" href="{{this._embedded.attractions.0.url}}">buy tickets</a></button>
+<img class="modal__circle-pic" src={{this.images.5.url}} alt={{this.name}} />
+<div class="modal__card">
+    <img class="modal__main-pic" src={{this.images.5.url}} alt={{this.name}} />
+
+    <div class="modal__content">
+        <h3 class="modal__title">info</h3>
+        <p class="modal__item">{{name}}</p>
+
+        <h3 class="modal__title">when</h3>
+        <span class="modal__item-span">{{this.dates.start.localDate}}</span>
+        <p class="modal__item">{{this.dates.start.localTime}}({{this.dates.timezone}})</p>
+
+        <h3 class="modal__title">where</h3>
+        <span class="modal__item-span">{{this.dates.timezone}}</span>
+        <p class="modal__item">{{_embedded.venues.0.address.line1}} </p>
+
+        <h3 class="modal__title">who</h3>
+        <p class="modal__item">{{_embedded.attractions.0.name}}</p>
+
+        <h3 class="modal__title">prices</h3>
+        <div class="modal__price">
+            <svg class="modal__icon-barcode">
+                <use href="./images/sprite.svg#icon-barcode"></use>
+            </svg>
+            <p class="modal__item ">Standart {{priceRanges.0.min}} {{priceRanges.0.currency}}</p>
         </div>
+        <button class="modal__btn-buy" type="button"><a class="linkModal"
+                href="{{this._embedded.attractions.0.url}}">buy tickets</a></button>
+        <div class="modal__price">
+            <svg class="modal__icon-barcode">
+                <use href="./images/sprite.svg#icon-barcode"></use>
+            </svg>
+            <p class="modal__item">Vip {{priceRanges.0.max}} {{priceRanges.0.currency}}</p>
+        </div>
+        <button class="modal__btn-buy" type="button"><a class="linkModal"
+                href="{{this._embedded.attractions.0.url}}">buy tickets</a></button>
     </div>
-    <button type="button" class="modal__btn-more">more from this autor</button>
-
-
-
+</div>
+{{!-- <button type="button" class="modal__btn-more">more from this autor</button> --}}
+<select class="modal__btn-more" name="author-attr" onchange="location = this.value">
+    <option>MORE FROM THIS AUTHOR</option>
+    <option class="modal__select">Genre: {{classifications.0.genre.name}}</option>
+    <option class="modal__select">Segment: {{classifications.0.segment.name}}</option>
+    <option class="modal__select">Subgenre: {{classifications.0.subGenre.name}}</option>
+</select>
