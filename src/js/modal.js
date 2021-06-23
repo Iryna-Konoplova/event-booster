@@ -13,7 +13,7 @@ const refs = {
   modalOpen: document.querySelector('.backdrop'),
   eventModalContainer: document.querySelector('.modal-event-card'),
   buttonCloseModal: document.querySelector('.modal__btn-close'),
-  // lightboxOverlay: document.querySelector('.backdrop'),
+  lightboxOverlay: document.querySelector('.js-lightbox'),
   selectCountry: document.querySelector('.select')
 }
 
@@ -58,7 +58,7 @@ function onEventClick(e) {
     return;
   }
 
-  refs.modalOpen.classList.add('is-hidden');
+  refs.lightboxOverlay.classList.add('is-hidden');
   newsApiService.idEvent = e.target.id;
   newsApiService.fetchEventById().then(appendEventModalMarkup);
 
@@ -73,7 +73,7 @@ function appendEventModalMarkup(data) {
 
 function onButtonCloseModalClick(evt) {
 
-  refs.modalOpen.classList.remove('is-hidden')
+  refs.lightboxOverlay.classList.remove('is-hidden')
 }
 
 function onCloseModalEscapeKeydown(evt) {
