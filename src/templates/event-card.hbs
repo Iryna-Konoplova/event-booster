@@ -1,4 +1,4 @@
-{{#each this}}
+{{!-- {{#each this}}
 <li id={{id}} class='event-card-list scale-up-center'>
   <div id={{id}} class="event-card-photo">
     <img id={{id}} class='event-card-img' src={{images.5.url}} alt={{name}} />
@@ -12,5 +12,35 @@
       </p>
     </div>
   </div>
+</li>
+{{/each}} --}}
+
+
+{{#each this}}
+<li class='item-event' data-id='{{id}}'>
+    <article class='card'>
+        <div class='card-thumb'>
+            {{#each images}}
+                {{#unless fallback}}
+                    {{#if url.length}}
+                         <img class='card-image' data-id='{{id}}' loading='lazy' src='{{url}}' alt='' />
+                    {{ else }}
+                        <img class='card-image' loading='lazy' src='https://s1.ticketm.net/dam/c/8cf/a6653880-7899-4f67-8067-1f95f4d158cf_124761_ARTIST_PAGE_3_2.jpg' alt='' />
+                    {{/if}}               
+                {{/unless}}
+            {{/each}}
+        </div>
+        <div class='event-info-thumb'>
+            <h5 class='event-name' data-id='{{id}}'>{{name}}</h5>
+            <p class='event-local-date'>{{dates.start.localDate}}</p>
+            <p class='location-link'>
+                {{#if _embedded.venues.[0].city.name.length}}
+                    {{_embedded.venues.[0].city.name}}
+                {{ else }}
+                    <span class="location-error">Check location on the website</span> 
+                {{/if}}  
+            </p>
+        </div>
+    </article>
 </li>
 {{/each}}
