@@ -1,24 +1,28 @@
 const axios = require('axios');
+// import pagination from './pagination';
 
 const API_KEY = 'uHSLi07StIOlriMPxJGxUbSYsHDs6AFx';
-const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey='+API_KEY;
+const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
 
 export default class NewsApiService {
     constructor() {
-        this.searchQuery = '';
-        this._countryQuery = '';
-        this.id = '';
+      this.searchQuery = '';
+      this._countryQuery = '';
+      this.id = '';
+      this.page = 1;
+      this.totalPages;
         if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1280) {
-            this.sizePage = 21;
-            } else{
-            this.sizePage = 20;
-        };       
+          this.sizePage = 21;
+        } else{
+          this.sizePage = 20;
+        };
     }
 
     async fetchEventsByCountryCode() {               
-          const data = await await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${this._countryQuery}
+          const data = await axios.get(`${BASE_URL}events.json?countryCode=${this._countryQuery}
             &sort=date,name,asc&size=${this.sizePage}&apikey=${API_KEY}`)
-            .then(response => response.data._embedded) 
+          .then(response => response.data._embedded)
+            // pagination(data)
             return data;
     }  
 
@@ -30,20 +34,30 @@ export default class NewsApiService {
         if (this._countryQuery != undefined) {
             urlParams += `&countryCode=${this._countryQuery}`;
         }
-        const url = `${BASE_URL}${urlParams}&size=20`;
-        console.log(url);
-        return  fetch(url)
-                  .then(r => r.json())
-                  .then(data => {
-                try {
-                    return data._embedded.events
-                }
-                catch(error) {
-                    return null;
-                }
 
+        const url = `${BASE_URL}events.json?${urlParams}&size=${this.sizePage}&page=${this.page}&apikey=${API_KEY}`;
+       
+        return  fetch(url)
+            .then(response => {
+              if (response.status === 200) {
+              return response.json();
+              }
+              throw new Error('===Data not fetched from server!===');
+            })
+            .then(data => {
+              try {
+                this.page += 1;
+                return data._embedded.events
+                }
+              catch(error) {
+                return null;
+                }
         })   
-    }
+  }
+  
+    resetPage() {
+    this.page = 1;
+  }
 
     get query() {
         return this.searchQuery;
@@ -62,18 +76,21 @@ export default class NewsApiService {
     }
     
     fetchEventById() {
-        const id = `https://app.ticketmaster.com/discovery/v2/events/${this.id}.json?apikey=${API_KEY}`;
+        const id = `${BASE_URL}events/${this.id}.json?apikey=${API_KEY}`;
         return fetch(id)
-            .then(r => r.json())
+            .then(response => {
+              if (response.status === 200) {
+              return response.json();
+              }
+              throw new Error('===Data not fetched from server!===');
+            })
             .then(data => {
-                console.log(data)
-                // console.log(data._embedded.events)
+                // console.log(data)
                 return data
             })
             .catch(() => {
                 errorFromServerById();
             });
-  
     }
 
     get idEvent() {

@@ -1,24 +1,19 @@
-// import countries from '../json/countries.json';
 import NewsApiService from './apiService';
-// import selectOptionsTpl from '../templates/selectOptions';
 import debounce from 'lodash.debounce';
 import eventCardTpl from '../templates/event-card.hbs';
-
-const refs = {
-  eventModalContainer: document.querySelector('.modal-event-card'),
-  searchInput: document.querySelector('.hero-form-field'),
-  eventsContainer: document.querySelector('.event-card-set'),
-  selectCountry: document.querySelector('.select'),
-};
+import countries from '../json/countries.json';
+import selectOptionsTpl from '../templates/selectOptions';
+import { refs } from '../js/refs';
 
 const newsApiService = new NewsApiService();
-// const optionsMarkup = createSelectorOptionsMarkup(countries);
+
+const optionsMarkup = createSelectorOptionsMarkup(countries);
 var inputValue = '';
 var selectValue;
-// refs.selectCountry.insertAdjacentHTML('beforeend', optionsMarkup);
 
-refs.selectCountry.addEventListener('change', debounce(onSelectCountry, 1000));
-refs.searchInput.addEventListener('input', debounce(onSearch, 1000));
+refs.select.insertAdjacentHTML('beforeend', optionsMarkup);
+refs.select.addEventListener('change', debounce(onSelectCountry, 500));
+refs.searchInput.addEventListener('input', debounce(onSearch, 500));
 
 function onSearch(e) {
   e.preventDefault();
@@ -27,7 +22,7 @@ function onSearch(e) {
   newsApiService.query = inputValue.trim();
   newsApiService.countryQuery = selectValue;
   newsApiService.fetchEmbedded().then(responseEvents => {
-    appendEventsMarkup(responseEvents);
+  appendEventsMarkup(responseEvents);
   });
 }
 
@@ -38,19 +33,18 @@ function onSelectCountry(e) {
   newsApiService.query = inputValue.trim();
   newsApiService.countryQuery = selectValue;
   newsApiService.fetchEmbedded().then(responseEvents => {
-    appendEventsMarkup(responseEvents);
+  appendEventsMarkup(responseEvents);
   });
 }
 
 function resetPage() {
-  refs.eventModalContainer.innerHTML = '';
+  refs.eventsContainer.innerHTML = '';
 }
 
-// function createSelectorOptionsMarkup(options) {
-//     return selectOptionsTpl(options);
-// }
-
 function appendEventsMarkup(events) {
-  console.log(events);
-  refs.eventsContainer.innerHTML = eventCardTpl(events);
+  refs.eventsContainer.insertAdjacentHTML('beforeend', eventCardTpl(events));
+}
+
+function createSelectorOptionsMarkup(options) {
+  return selectOptionsTpl(options);
 }
