@@ -38,7 +38,7 @@
 .modal {
   position: absolute;
   z-index: 1050;
-  top: 100%;
+  top: 80%;
   left: 50%;
   overflow: auto;
 
@@ -55,6 +55,7 @@
   height: 915;
 
   @media screen and (min-width: 768px) {
+    top: 90%;
     width: 595px;
     height: 831px;
     padding: 28px 17px 56px 50px;
@@ -62,6 +63,7 @@
   }
 
   @media screen and (min-width: 1280px) {
+    top: 100%;
     width: 942px;
     height: 1023px;
     padding: 62px 30px;
